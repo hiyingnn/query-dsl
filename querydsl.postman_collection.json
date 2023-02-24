@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "3ca42658-13f4-425e-8d52-89eb3b1b5c1a",
+		"name": "querydsl",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST career",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "alice",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"company\": \"Michelin Star Restaurant - ABC\",\r\n    \"appointment\": {\r\n        \"position\": \"Big Boss\",\r\n        \"rank\": \"Professional A\",\r\n        \"references\": [\r\n            {\r\n                \"field\": \"position\",\r\n                \"content\": \"Big Boss\",\r\n                \"sources\": [\r\n                    {\r\n                        \"dateObtained\": \"2022-11-11T12:19:54.52\",\r\n                        \"referenceType\": \"LINKED_IN\",\r\n                        \"comment\": \"Obtained via LinkedIn learning\"\r\n                    }\r\n                ]\r\n            }\r\n        ]\r\n    },\r\n    \"duration\": \"1Y\",\r\n    \"lastDrawnSalary\": \"4K\",\r\n    \"skills\": [\r\n        \"Cooking\"\r\n    ],\r\n    \"certs\": [\r\n        {\r\n            \"name\": \"Slicing\",\r\n            \"issuedBy\": \"Cooking School A\",\r\n            \"references\": [\r\n                {\r\n                    \"field\": \"issuedBy\",\r\n                    \"content\": \"Cooking School A\",\r\n                    \"sources\": [\r\n                        {\r\n                            \"dateObtained\": \"2022-11-11T12:19:54.52\",\r\n                            \"referenceType\": \"LINKED_IN\",\r\n                            \"comment\": \"Obtained via LinkedIn learning\"\r\n                        }\r\n                    ]\r\n                },\r\n                {\r\n                    \"field\": \"name\",\r\n                    \"content\": \"Slicing\",\r\n                    \"sources\": [\r\n                        {\r\n                            \"dateObtained\": \"2022-11-11T12:19:54.52\",\r\n                            \"referenceType\": \"LINKED_IN\",\r\n                            \"comment\": \"Obtained via LinkedIn learning\"\r\n                        }\r\n                    ]\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"name\": \"Cooking\",\r\n            \"issuedBy\": \"Cooking School B\",\r\n            \"references\": [\r\n                {\r\n                    \"field\": \"name\",\r\n                    \"content\": \"Cooking\",\r\n                    \"sources\": [\r\n                        {\r\n                            \"dateObtained\": \"2022-11-11T12:19:54.52\",\r\n                            \"referenceType\": \"LINKED_IN\",\r\n                            \"comment\": \"Obtained via LinkedIn learning\"\r\n                        }\r\n                    ]\r\n                },\r\n                {\r\n                    \"field\": \"issuedBy\",\r\n                    \"content\": \"Cooking School B\",\r\n                    \"sources\": [\r\n                        {\r\n                            \"dateObtained\": \"2022-11-11T12:19:54.52\",\r\n                            \"referenceType\": \"LINKED_IN\",\r\n                            \"comment\": \"Obtained via LinkedIn learning\"\r\n                        }\r\n                    ]\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"references\": [\r\n        {\r\n            \"field\": \"company\",\r\n            \"content\": \"Michelin Star Restaurant - ABC\",\r\n            \"sources\": [\r\n                {\r\n                    \"dateObtained\": \"2022-11-11T12:19:54.52\",\r\n                    \"referenceType\": \"LINKED_IN\",\r\n                    \"comment\": \"Obtained via LinkedIn learning\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"field\": \"company\",\r\n            \"content\": \"Michelin Star Restaurant - Junior\",\r\n            \"sources\": [\r\n                {\r\n                    \"dateObtained\": \"2022-11-11T12:19:54.52\",\r\n                    \"referenceType\": \"LINKED_IN\",\r\n                    \"comment\": \"Obtained via LinkedIn learning\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"field\": \"skills\",\r\n            \"content\": \"Cooking\",\r\n            \"sources\": [\r\n                {\r\n                    \"dateObtained\": \"2022-11-11T12:19:54.52\",\r\n                    \"referenceType\": \"LINKED_IN\",\r\n                    \"comment\": \"Obtained via LinkedIn learning\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/career",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"career"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all career",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/career",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"career"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET career by variable",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/career/1/query-dsl-custom?companyName=Slicing",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"career",
+						"1",
+						"query-dsl-custom"
+					],
+					"query": [
+						{
+							"key": "companyName",
+							"value": "Slicing"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET career by variable do",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/career/1/query-dsl-variable?certs.name=Cooking",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"career",
+						"1",
+						"query-dsl-variable"
+					],
+					"query": [
+						{
+							"key": "certs.name",
+							"value": "Cooking"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
