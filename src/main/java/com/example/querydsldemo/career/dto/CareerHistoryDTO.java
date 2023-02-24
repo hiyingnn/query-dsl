@@ -22,6 +22,8 @@ public class CareerHistoryDTO extends ReferencesDTO {
     String id;
     String company;
 
+    Long profileId;
+
     @Valid AppointmentDTO appointment;
     String duration;
     String lastDrawnSalary;

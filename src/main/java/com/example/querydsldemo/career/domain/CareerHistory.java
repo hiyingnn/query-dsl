@@ -1,7 +1,9 @@
 package com.example.querydsldemo.career.domain;
 
 import com.example.querydsldemo.common.References;
+import com.querydsl.core.annotations.QueryEmbedded;
 import com.querydsl.core.annotations.QueryEntity;
+import com.querydsl.core.annotations.QuerySupertype;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -19,15 +21,18 @@ import java.util.List;
 @SuperBuilder(toBuilder = true)
 @Document(collection = "career")
 @NoArgsConstructor
-@QueryEntity
 public class CareerHistory extends References implements Auditable {
     @MongoId
     String id;
+    Long profileId;
+
     String company;
+
     Appointment appointment;
     String duration;
     String lastDrawnSalary;
     List<String> skills;
+
     List<Certification> certs;
 
     @Version
