@@ -18,7 +18,7 @@ public interface CareerHistoryQueryDslRepository
     querydslBindings.excludeUnlistedProperties(true);
     // your queries will go here
     querydslBindings.bind(qCareerHistory.company).as("company").withDefaultBinding();
-    querydslBindings.bind(qCareerHistory.skills).as("skills").withDefaultBinding();
+    querydslBindings.bind(qCareerHistory.skills).as("skills");
     querydslBindings.including(qCareerHistory.skills, qCareerHistory.company);
 
   }
